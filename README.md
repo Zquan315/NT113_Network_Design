@@ -21,5 +21,50 @@
 
 ## 3. Sơ đồ mạng Logic
 
+![Mô hình mạng logic](logic.png)
+
+## 4. Bảng địa chỉ
+
+| **Số lượng thiết bị cần gán địa chỉ** | **Địa chỉ mạng con** | **Subnet Mask**        | **Số địa chỉ tối đa có thể dùng** | **Tên mạng con**          |
+|:--------------------------------------|:---------------------|:-----------------------|:---------------------------------|:---------------------------|
+| 100                                   | 192.168.0.0/24       | 255.255.255.0          | 254                               | HQ-Guest                   |
+| 50                                    | 192.168.1.0/24       | 255.255.255.0          | 254                               | HQ-HR                      |
+| 20                                    | 192.168.2.0/24       | 255.255.255.0          | 254                               | HQ-TM                      |
+| 10                                    | 192.168.3.0/24       | 255.255.255.0          | 254                               | HQ-Tester                  |
+| 10                                    | 192.168.4.0/24       | 255.255.254.0          | 254                               | HQ-Dev                     |
+| 10                                    | 192.168.7.0/24       | 255.255.255.0          | 254                               | HQ-PM                      |
+| 10                                    | 192.168.8.0/24       | 255.255.255.0          | 254                               | HQ-BA                      |
+| 10                                    | 192.168.9.0/24       | 255.255.255.0          | 254                               | HQ-CEO                     |
+| 10                                    | 192.168.11.0/24      | 255.255.254.0          | 254                               | HQ-ITM                     |
+| 250                                   | 192.168.5.0/24       | 255.255.254.0          | 254                               | HQ-Floor5-Server           |
+| 250                                   | 192.168.6.0/24       | 255.255.255.0          | 254                               | HQ-Floor5-WLC              |
+| 20                                    | 192.168.10.0/24      | 255.255.255.0          | 254                               | Branch-Tester              |
+| 20                                    | 192.168.20.0/24      | 255.255.255.0          | 254                               | Branch-Dev                 |
+| 2                                    | 5.0.0.0/30           | 255.255.255.252        | 2                                 | WAN                        |
+|  2                                      | 6.0.0.0/30           | 255.255.255.252        | 2                                 |   WAN                          |
+|   2                                     | 7.0.0.0/30           | 255.255.255.252        | 2                                 |   WAN                          |
+|    2                                    | 8.0.0.0/30           | 255.255.255.252        | 2                                 |   WAN                          |
+|     2                                   | 192.168.99.0/30      | 255.255.255.252        | 2                                 |    WAN                         |
+|      2                                  | 192.168.100.0/30     | 255.255.255.252        | 2                                 |    WAN                         |
+|       2                                 | 50.0.0.0/30          | 255.255.255.252        | 2                                 |    WAN                         |
+|        2                                | 60.0.0.0/30          | 255.255.255.252        | 2                                 |    WAN                         |
+|         2                               | 70.0.0.0/30          | 255.255.255.252        | 2                                 |    WAN                         |
+|          2                              | 80.0.0.0/30          | 255.255.255.252        | 2                                 |    WAN                         |
+|           2                             | 90.0.0.0/30          | 255.255.255.252        | 2                                 |    WAN                         |
+|            2                            | 100.0.0.0/30         | 255.255.255.252        | 2                                 |    WAN                         |
+| 2                                   | 192.168.50.0/24      | 255.255.255.0          | 254                               | VPN                        |
+|          2                             | 192.168.60.0/24      | 255.255.255.0          | 254                               |   VPN                          |
+|           2                             | 192.168.70.0/24      | 255.255.255.0          | 254                               |      VPN                       |
+|            2                            | 192.168.80.0/24      | 255.255.255.0          | 254                               |         VPN                    |
+
+## 5. Kết luận
+Đề án đã cho ta thấy kế hoạch chi tiết về việc thiết kế một hệ thống mạng cho một công ty có một trụ sở chính và một chi nhánh. Một số điểm nhấn quan trọng trong đề án này
+* Mô hình mạng được thiết kế một cách linh hoạt và có tính bảo mật. Mô hình mạng được chia rõ ràng, việc sử dụng VPN để kết nối trụ sở và chi nhánh là hợp lý, vì việc nối dây nếu ở khoảng cách địa lý xa là bất khả thi. Các giao thức STP, HSRP nhằm đảm bảo hiệu suất, dự phòng và an toàn
+* Việc thống kê và báo cáo chi tiết ngân sách là cần thiết cho việc quản lý, triển khai và duy trì được các dịch vụ mạng, tạo cơ sở để lập được kế hoạch tài chính một cách chi tiết, cụ thể và hợp lý
+* Việc sử dụng các thiết bị định tuyến có chức năng quản lý tập trung như Multilayer Switch và WLC giúp dễ dàng quản lý và mở rộng hệ thống
+> Một số lưu ý
+* Tối ưu hóa chi phí: Cân nhắc các thiết bị và những dịch vụ được thuê để sử dụng các dịch vụ, thiết bị khác có chi phí thấp hơn nhưng chức năng tương tự
+* Đánh giá hiệu năng thực tế: Mô phỏng trước mô hình mạng trước khi triển khai thực tế để đảm bảo hệ thống được hoạt động một cách trơn tru, vận hành ổn định nhất có thể
+* Bảo trì: Cần xây dựng một kế hoạch bả trì định kỳ để giữ cho hệ thống luôn hoạt động ổn định, luôn ở trạng thái tốt nhất và sẵn sàng tại mọi thời điểm
 
 > <span style="color:red;">**Copyright by To Cong Quan**</span> 
