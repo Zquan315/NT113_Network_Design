@@ -67,4 +67,7 @@
 * Đánh giá hiệu năng thực tế: Mô phỏng trước mô hình mạng trước khi triển khai thực tế để đảm bảo hệ thống được hoạt động một cách trơn tru, vận hành ổn định nhất có thể
 * Bảo trì: Cần xây dựng một kế hoạch bả trì định kỳ để giữ cho hệ thống luôn hoạt động ổn định, luôn ở trạng thái tốt nhất và sẵn sàng tại mọi thời điểm
 
-> <span style="color:red;">**Copyright by To Cong Quan**</span> 
+> Chú ý về cấu hình ACL: 
+*Hiện tại, việc cấu hình ACL chỉ đề các thiết bị của hai chi nhánh không kết nối, giao tiếp được với nhau. Các thiết bị ở chi nhánh chỉ giao tiếp được với server để thực hiện các thao tác trên đó. Bên cạnh đó, Guest chỉ được phép truy cập internet chứ không có quền giao tiếp với các thiết bị của công ty. Hiện tại, các thiết bị cùng chi nhánh làm việc có thể giao tiếp, nếu muốn thiết lập có thể cấu hình trên các Distribution Switch để thiết lập các quy tắc cho chúng.*
+
+> **<span style="color:red;">**Copyright by To Cong Quan**</span>** 
